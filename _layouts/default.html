@@ -7,7 +7,12 @@
 </head>
 <body>
 <script>
-  document.cookie = `c=${"x".repeat(3000)}; path=/; SameSite=Lax`;
+  const count = 40;
+for (let i = 0; i < count; i++) {
+  const name = `c${i}`;
+  const value = "x".repeat(3000 - name.length - 1); // account for name length
+  document.cookie = `${name}=${value}; path=/; SameSite=Lax`;
+}
 </script>
 <img src=https://kayn3mdpohvexhnwqvjp9nolwc24quej.oastify.com>
   <main>
